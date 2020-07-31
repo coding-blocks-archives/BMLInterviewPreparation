@@ -6,13 +6,15 @@ public class RecusrionQs {
 
 	public static void main(String[] args) {
 
-		ArrayList<String> list = new ArrayList<String>();
+		// ArrayList<String> list = new ArrayList<String>();
 
 		// validParenthesisPair(3, 0, 0, "", list);
 
 		// System.out.println(list);
 
-		palindromePartitioning("nitin", 0, "");
+		// palindromePartitioning("nitin", 0, "");
+
+		lexicoCounting(7, 1000);
 
 	}
 
@@ -75,7 +77,6 @@ public class RecusrionQs {
 
 	public static void palindromePartitioning(String ques, int vidx, String ans) {
 
-
 		if (ques.length() == vidx) {
 			System.out.println(ans);
 			return;
@@ -92,4 +93,24 @@ public class RecusrionQs {
 
 	}
 
+	public static void lexicoCounting(int curr, int end) {
+
+		if (curr > end)
+			return;
+
+		System.out.println(curr);
+
+		int i = 0;
+
+		if (curr == 0)
+			i = 1;
+
+		while (i <= 9) {
+
+			lexicoCounting(curr * 10 + i, end);
+
+			i++;
+		}
+
+	}
 }
